@@ -9,6 +9,8 @@ require '../app/config/database.php';
 
 require '../app/src/pdo.php';
 
+$db = new Database();
+
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +22,11 @@ require '../app/src/pdo.php';
     </head>
     <body>
         <?php require 'blocks/no1.php' ?>
+        <?php require 'blocks/no2.php' ?>
+        <?php require 'blocks/no3.php' ?>
+        <?php require 'blocks/no4.php' ?>
+        <?php require 'blocks/no5.php' ?>
+        <?php require 'blocks/no6.php' ?>
     </body>
 
     <script type="text/javascript" src="/assets/js/main.js"></script>
