@@ -47,9 +47,9 @@ if ($movie_table && $pictures_table) {
 		}
 	}
 
-	echo "Done, go home now";
+	echo "Готово, вернитесь домой!";
 }
 
 ?>
 
-<a href="/">Home</a>
+<a href="/">Домой</a>

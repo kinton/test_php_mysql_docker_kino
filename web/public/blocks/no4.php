@@ -23,15 +23,16 @@ $no_photo_films_count = $db->selectColumn(
 	<b>10 первых фильмов без фото</b>
 	<div class="no-photo-10">
 		<?php
-			foreach ($first_films as $film) {
-				?>
-					<div class="film"><?= $film['title'] ?></div>
-				<?php
-			}
+			if ($first_films)
+				foreach ($first_films as $film) {
+					?>
+						<div class="film"><?= $film['title'] ?></div>
+					<?php
+				}
 		?>
 	</div>
 
 	<h3>2)</h3>
-	<b>Количество фильмов без фото: </b> <?= $no_photo_films_count ?>
+	<b>Количество фильмов без фото: </b> <?= $no_photo_films_count ? $no_photo_films_count : 0 ?>
 
 </div>
