@@ -1,5 +1,5 @@
 <div class="simple-container">
-	<header>1. Том Круз и Том Хэнкс?</header>
+	<header>1. Том Круз и Том Хэнкс</header>
 	<article class="task1-result">
 		<div class="actor">
 			<h3>Том Круз</h3>
