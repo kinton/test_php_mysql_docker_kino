@@ -6,6 +6,17 @@ body {
 	font-family: Arial;
 }
 
+$std-film-color: #cacaf2;
+%std-film-block {
+	background: $std-film-color;
+	padding: 5px 10px;
+	border-radius: 4px;
+	margin: 4px;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+
 .simple-container {
 	width: 100%;
 	padding: 60px;
@@ -69,5 +80,60 @@ body {
 		.conclusion {
 			grid-column: 1 / 2;
 		}
+	}
+}
+
+.parsed-films {
+	display: flex;
+	flex-flow: row nowrap;
+	overflow-x: scroll;
+	.film {
+		@extend %std-film-block;
+	}
+}
+
+.no-photo-10 {
+	display: flex;
+	flex-flow: row wrap;
+	.film {
+		@extend %std-film-block;
+		cursor: initial;
+	}
+}
+
+.drop-tree {
+	& > .handler > .element {
+		margin-left: 0 !important;
+	}
+	.handler {
+		margin: 0;
+		list-style-type: none;
+		max-height: 500vh;
+		.element {
+			margin: 4px 4px 4px 40px;
+			cursor: pointer;
+			background: #e4e4e4;
+			padding: 5px 10px;
+			
+			&:hover > .handler {
+				// display: initial;
+				transition: max-height 1s ease-in-out 0.2s;
+				max-height: 500vh;
+			}
+			&:hover > .handler.extra-hidden {
+				transition: max-height 0.2s cubic-bezier(0, 1, 0, 1);
+			}
+		}
+		&.hidden {
+			// display: none;
+			overflow: hidden;
+			max-height: 0;
+			transition: max-height 0.2s cubic-bezier(0, 1, 0, 1);
+		}
+		&.extra-hidden {
+			// display: none !important;
+			max-height: 0 !important;
+		}
+		transition: max-height 1s ease-in-out;
 	}
 }
